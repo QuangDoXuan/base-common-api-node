@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": ["gender", "phone", "nickname", "birthday", "province_id"],
+  "additionalProperties": false,
+  "properties": {
+    "gender": {
+      "type": "number"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "birthday": {
+      "type":"string"
+    },
+    "province_id": {
+      "type":"number"
+    }
+  }
+}
