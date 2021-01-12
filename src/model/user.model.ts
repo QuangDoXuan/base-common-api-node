@@ -13,7 +13,7 @@ const crypto = require('crypto');
 export class UserModel {
   async getUserById(transaction: EntityManager, userId: number) {
     const repository = transaction.getRepository(User);
-    const user = await repository.findOne(userId, {relations: ["province"], where: { softDelete: false }});
+    const user = await repository.findOne(userId, {relations: ["provinces"], where: { softDelete: false }});
     return user;
   }
 

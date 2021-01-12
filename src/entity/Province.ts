@@ -5,7 +5,7 @@ import {
     Column,
 } from 'typeorm';
 
-@Entity('province')
+@Entity('provinces')
 
 export class Province {
     @PrimaryGeneratedColumn()
@@ -16,18 +16,17 @@ export class Province {
     name: string;
 
     @Column({ type: 'nvarchar' })
-    kenFuri: string;
+    address: string;
 
-    @Column({
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP'
-    })
-    createdAt: Date;
+    // @Column({
+    //     type: 'timestamp',
+    //     default: () => 'CURRENT_TIMESTAMP'
+    // })
+    // createdAt: Date;
 
-    @Column({
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP'
-    })
-    updatedAt: Date;
-    
+    // @Column({
+    //     type: 'timestamp',
+    //     default: () => 'CURRENT_TIMESTAMP'
+    // })
+    // updatedAt: Date;
 }

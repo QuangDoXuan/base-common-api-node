@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { float } from 'aws-sdk/clients/lightsail';
 import { Province } from './Province';
-@Entity('user')
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;

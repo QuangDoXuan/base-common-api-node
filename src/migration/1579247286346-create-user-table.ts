@@ -4,7 +4,7 @@ export class createUserTable1579247286346 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.createTable(
       new Table({
-        name: 'user',
+        name: 'users',
         columns: [
           {
             name: 'id',
@@ -73,7 +73,7 @@ export class createUserTable1579247286346 implements MigrationInterface {
           },
           {
             name: 'lastLogin',
-            type: 'bigint',
+            type: 'timestamp',
             isNullable: true,
           },
           {
@@ -110,24 +110,9 @@ export class createUserTable1579247286346 implements MigrationInterface {
       }),
       true
     )
-    await queryRunner.addColumn("user", new TableColumn({
-      name: "provinceId",
-      type: "int",
-      isNullable: true
-    }));
-    await queryRunner.createForeignKey("user", new TableForeignKey({
-      columnNames: ["provinceId"],
-      referencedColumnNames: ["id"],
-      referencedTableName: "province",
-      onDelete: "CASCADE"
-    }));
   }
-
+ 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable('user');
-    const table = await queryRunner.getTable("province");
-    const foreignKey = table.foreignKeys.find(fk => fk.columnNames.indexOf("provinceId") !== -1);
-    await queryRunner.dropForeignKey("province", foreignKey);
-    await queryRunner.dropColumn("user", "provinceId");
+    await queryRunner.dropTable('users');
   }
 }

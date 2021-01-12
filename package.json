@@ -54,7 +54,8 @@
     "socket.io": "^2.3.0",
     "string-format": "^2.0.0",
     "stripe": "^8.28.0",
-    "typeorm": "0.2.22"
+    "tsc-watch": "^4.2.9",
+    "typeorm": "^0.2.29"
   },
   "scripts": {
     "start": "node build/bin/www.js",
